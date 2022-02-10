@@ -7,6 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Book {
+	
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
@@ -26,7 +27,6 @@ public class Book {
 	}
 
 	public Book() {
-		super();
 	}
 
 	public Long getId() {
@@ -79,7 +79,7 @@ public class Book {
 
 	@Override
 	public String toString() {
-		return "Bookstore [id=\" + id + \", title=" + title + ", author=" + author + ", year=" + year + ", isbn=" + isbn + ", price="
+		return "Bookstore [id=" + id + ", title=" + title + ", author=" + author + ", year=" + year + ", isbn=" + isbn + ", price="
 				+ price + "]";
 	}
 }

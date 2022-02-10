@@ -10,18 +10,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import hh.swd20.Bookstore.domain.Book;
 import hh.swd20.Bookstore.domain.BookRepository;
 
+@Controller
 public class BookstoreController {
 			@Autowired
 			private BookRepository repository;
 	
-			// http://localhost:8080/index
+			/*// http://localhost:8080/index
 			@RequestMapping(value= "/index", method = RequestMethod.GET)
 			public String bookstoreIndex(Model model) {		
 		        return "bookstore";
-			}
+			}*/
 			
-			@RequestMapping(value= "/booklist", method = RequestMethod.GET)
-			public String bookstore(Model model) {		
+			@RequestMapping("/booklist")
+			public String booklist(Model model) {		
 				model.addAttribute("books", repository.findAll());
 		        return "booklist";
 			}
