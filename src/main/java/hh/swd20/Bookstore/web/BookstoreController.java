@@ -14,16 +14,28 @@ import hh.swd20.Bookstore.domain.BookRepository;
 public class BookstoreController {
 			@Autowired
 			private BookRepository repository;
-	
-			/*// http://localhost:8080/index
-			@RequestMapping(value= "/index", method = RequestMethod.GET)
-			public String bookstoreIndex(Model model) {		
-		        return "bookstore";
-			}*/
 			
 			@RequestMapping("/booklist")
 			public String booklist(Model model) {		
 				model.addAttribute("books", repository.findAll());
 		        return "booklist";
 			}
+			
+			@RequestMapping(value = "/add")
+		    public String addStudent(Model model){
+		    	model.addAttribute("book", new Book());
+		        return "addbook";
+		    } 
+		    
+		    @RequestMapping(value = "/save", method = RequestMethod.POST)
+		    public String save(Book book){
+		        repository.save(book);
+		        return "redirect:booklist";
+		    }
+
+		    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+		    public String deleteStudent(@PathVariable("id") Long bookId, Model model) {
+		    	repository.deleteById(bookId);
+		        return "redirect:../booklist";
+		    }
 }
