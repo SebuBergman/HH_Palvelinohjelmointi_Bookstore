@@ -7,7 +7,6 @@ import javax.persistence.Id;
 
 @Entity
 public class Book {
-	
 	@Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
@@ -25,6 +24,21 @@ public class Book {
 		this.isbn = isbn;
 		this.price = price;
 	}
+	
+	public Book(Long id, String title, String author, int year, String isbn, int price) {
+		super();
+		this.title = title;
+		this.author = author;
+		this.year = year;
+		this.isbn = isbn;
+		this.price = price;
+	}
+	
+	public Book(Long id) {
+		super();
+		this.id = id;
+	}
+
 
 	public Book() {
 	}
