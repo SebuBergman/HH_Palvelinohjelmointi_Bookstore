@@ -3,6 +3,7 @@
 <head>
     <title>Booklist edit</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
 </head>
 <body>
 	<h1>Edit book</h1>
@@ -31,9 +32,9 @@
 			<label for="price">Price</label>
 			<input type="text" th:field="*{price}" />
 			<div style="clear: both; display: block; height: 10px;"></div>
-			<input type="submit" value="Save Book"></input>
+			<input type="submit" value="Save Book" class="btn btn-success"></input>
 		</form>
-		<a href="/booklist">Return</a>
+		<a href="/booklist" class="btn btn-secondary">Return</a>
 	</div>
 </body>
 </html>
