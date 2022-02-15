@@ -17,19 +17,19 @@ public class BookstoreApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(BookstoreApplication.class, args);
 	}
-	
+
 	@Bean
 	public CommandLineRunner bookDemo(BookRepository repository) {
 		return (args) -> {
 			log.info("save a couple of books");
 			repository.save(new Book("Shadow of the Conqueror", "Shad M. Brooks", 2019, "945-3-16-14-15", 32));
-			repository.save(new Book("The Way of Kings", "Brandon Sanderson", 2010, "9564-17-15-16", 35));	
-			
+			repository.save(new Book("The Way of Kings", "Brandon Sanderson", 2010, "9564-17-15-16", 35));
+
 			log.info("fetch all books");
 			for (Book book : repository.findAll()) {
 				log.info(book.toString());
 			}
 		};
 
-}
+	}
 }
