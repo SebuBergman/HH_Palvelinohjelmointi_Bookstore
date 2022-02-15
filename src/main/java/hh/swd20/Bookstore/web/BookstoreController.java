@@ -37,11 +37,6 @@ public class BookstoreController {
 		return "redirect:booklist";
 	}
 
-	@RequestMapping(value = "/books", method = RequestMethod.GET)
-	public @ResponseBody List<Book> bookListRest() {
-		return (List<Book>) repository.findAll();
-	}
-
 	@RequestMapping(value = "/edit{id}", method = RequestMethod.GET)
 	public String editBook(@PathVariable("id") Long bookId, Model model) {
 		model.addAttribute("book", repository.findById(bookId));
