@@ -19,7 +19,7 @@ public class Book {
 	private int price;
 	
 	@ManyToOne
-	@JoinColumn(name = "categid")
+	@JoinColumn(name = "categoryid")
 	private Category category;
 	
 	public Book(String title, String author, int year, String isbn, int price, Category category) {
@@ -103,7 +103,7 @@ public class Book {
 		return category;
 	}
 	
-	public void setDepartment(Category category) {
+	public void setCategory(Category category) {
 		this.category = category;
 	}
 
