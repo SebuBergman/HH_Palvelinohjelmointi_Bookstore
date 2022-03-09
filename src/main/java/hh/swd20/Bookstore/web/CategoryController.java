@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import hh.swd20.Bookstore.domain.Category;
 import hh.swd20.Bookstore.domain.CategoryRepository;
 
+@CrossOrigin
 @Controller
 public class CategoryController {
 	@Autowired
@@ -41,4 +42,22 @@ public class CategoryController {
 		crepository.save(category);
 		return "redirect:categorylist";
 	}
+	
+	// RESTful service, Category findAll
+    @RequestMapping(value="/categories", method = RequestMethod.GET)
+    public @ResponseBody List<Category> getDepartmentsRest() {	
+        return (List<Category>) crepository.findAll();
+    }
+    
+    // RESTful service, Category findById
+    @RequestMapping(value="/categories/{id}", method = RequestMethod.GET)
+    public @ResponseBody Optional<Category> findDepartmentRest(@PathVariable("id") Long dId) {	
+    	return crepository.findById(dId);
+    }
+    
+    // RESTful service, Save category
+    @RequestMapping(value="/categories", method = RequestMethod.POST)
+    public @ResponseBody Category saveStudentRest(@RequestBody Category category) {	
+    	return crepository.save(category);
+    }
 }
