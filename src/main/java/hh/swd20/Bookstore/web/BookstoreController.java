@@ -46,7 +46,7 @@ public class BookstoreController {
 		return brepository.findById(bookId);
 	}
 	
-	// RESTful service to save new student
+	// RESTful service, Save Book
     @RequestMapping(value="/books", method = RequestMethod.POST)
     public @ResponseBody Book saveBookRest(@RequestBody Book book) {	
     	return brepository.save(book);
