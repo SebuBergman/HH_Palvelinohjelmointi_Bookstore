@@ -45,6 +45,12 @@ public class BookstoreController {
 	public @ResponseBody Optional<Book> findBookRest(@PathVariable("id") Long bookId) {
 		return brepository.findById(bookId);
 	}
+	
+	// RESTful service to save new student
+    @RequestMapping(value="/books", method = RequestMethod.POST)
+    public @ResponseBody Book saveBookRest(@RequestBody Book book) {	
+    	return brepository.save(book);
+    }
 
 	//Booklist addBook
 	@RequestMapping(value = "/add")
