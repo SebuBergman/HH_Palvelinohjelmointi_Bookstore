@@ -38,19 +38,6 @@ public class BookstoreApplication {
 			for (Book book : brepository.findAll()) {
 				log.info(book.toString());
 			}
-			
-			/*
-			log.info("Save a couple of categories");
-			crepository.save(new Category("Scifi"));
-			crepository.save(new Category("Epic"));
-			crepository.save(new Category("Action & Adventure"));
-			
-			log.info("fetch all categories");
-			for (Category category : crepository.findAll()) {
-				log.info(category.toString());
-			}
-			*/
 		};
-
 	}
 }
