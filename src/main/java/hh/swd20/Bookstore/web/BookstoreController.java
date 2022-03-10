@@ -33,6 +33,18 @@ public class BookstoreController {
 		model.addAttribute("categories", crepository.findAll());
 		return "booklist";
 	}
+	
+	//Login mapping for Bookstore
+	@RequestMapping(value="/login")
+	public String login() {
+		return "login";
+	}
+	
+	//Index mainpage/starterpage
+	@RequestMapping(value={"/", "/index"})
+	public String indexSecure() {
+		return "index";
+	}
 
 	//Restful service for bookstore, FindAll books
 	@RequestMapping(value="/books", method = RequestMethod.GET)

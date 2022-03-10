@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### WebSecurityConfig ###
+hh.swd20.Bookstore/WebSecurityConfig.java
