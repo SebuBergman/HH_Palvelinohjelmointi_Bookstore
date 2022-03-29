@@ -149,4 +149,4 @@ buildNumber.properties
 
 ### Itse tehdyt ###
 ### WebSecurityConfig ###
-/src/main/java/hh/swd20/Bookstore/WebSecurityConfig.java
+# /src/main/java/hh/swd20/Bookstore/WebSecurityConfig.java
