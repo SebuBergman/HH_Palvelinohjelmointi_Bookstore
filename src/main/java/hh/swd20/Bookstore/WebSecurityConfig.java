@@ -23,14 +23,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 		.authorizeRequests().antMatchers("/css/**", "/", "/index").permitAll() // Enable css when logged out
 		.and()
-		.authorizeRequests().antMatchers("/h2-console/**").permitAll()
-        .and()
 	    .authorizeRequests().anyRequest().authenticated()
 	    .and()
-	    .csrf().ignoringAntMatchers("/h2-console/**")
-        .and()
-        .headers().frameOptions().sameOrigin()
-        .and()
 	  .formLogin()
 	      .defaultSuccessUrl("/booklist", true)
 	      .permitAll()

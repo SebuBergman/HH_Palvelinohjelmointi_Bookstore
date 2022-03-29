@@ -46,6 +46,10 @@ public class BookstoreController {
 	public String indexSecure() {
 		return "index";
 	}
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
+	public String showWelcome(Model model) {
+		return "welcome";
+	}
 
 	//Restful service for bookstore, FindAll books
 	@RequestMapping(value="/books", method = RequestMethod.GET)
