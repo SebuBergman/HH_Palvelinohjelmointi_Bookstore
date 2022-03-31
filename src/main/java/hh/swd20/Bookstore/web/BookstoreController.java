@@ -42,7 +42,7 @@ public class BookstoreController {
 	}
 	
 	//Index mainpage/starterpage
-	@RequestMapping(value = "/welcome", method = RequestMethod.GET)
+	@RequestMapping(value = "/index", method = RequestMethod.GET)
 	public String showWelcome(Model model) {
 		return "welcome";
 	}
